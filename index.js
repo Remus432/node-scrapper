@@ -10,11 +10,11 @@ mongoose.connect(dbURI, () => {
   console.log("connected to mongodb")
 })
 
+const PORT = process.env.PORT || 3001
+
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(router)
 
-app.listen(process.env.PORT || 3001, (req, res) => {
-  console.log("connected to server")
-})
+app.listen(PORT)
