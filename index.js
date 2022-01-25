@@ -12,7 +12,7 @@ mongoose.connect(dbURI, () => {
 
 const PORT = process.env.PORT || 3001
 
-app.use(cors())
+app.use(cors({ origin: "https://qr-code-generator-chi.vercel.app" }))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(router)
