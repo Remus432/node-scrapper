@@ -2,6 +2,10 @@ const router = require("express").Router()
 const PageInfo = require("../model")
 const getPageInfo = require("../utils")
 
+router.get("/", async (req, res) => {
+  res.send("Welcome to API")
+})
+
 router.get("/data", async (req, res) => {
   const pageInfos = await PageInfo.find()
 
