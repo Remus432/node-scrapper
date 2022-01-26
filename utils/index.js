@@ -19,7 +19,7 @@ const getPageInfo = async (url) => {
     })
     const page = await browser.newPage()
 
-    await page.goto(`${url}`, { timeout: 0 })
+    await page.goto(`${url}`, { timeout: 0, waitUntil: "load" })
 
     const pageTitle = await page.title()
 
